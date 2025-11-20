@@ -258,13 +258,13 @@ secret_mode:
     @ R0 = fmt, R1 = inv20, R2 = inv10, R3 = Balance. 
     @ Stack: TransCount, TotalDist
     
-    ldr r0, =trans_count
-    ldr r0, [r0]
-    push {r0}               @ Push trans count (Arg 4)
-    
     ldr r0, =total_dist
     ldr r0, [r0]
     push {r0}               @ Push total dist (Arg 5)
+
+    ldr r0, =trans_count
+    ldr r0, [r0]
+    push {r0}               @ Push trans count (Arg 4)
     
     ldr r0, =str_secret     @ Format String
     @ Reload registers for R1, R2, R3
